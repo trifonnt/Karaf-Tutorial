@@ -3,18 +3,30 @@ SimpleCamel
 
 This example just contains a blueprint file with a camel context and a route.
 
-Run in Karaf
-------------
+Run in Karaf-4.0.3
+------------------
 
-features:addurl mvn:org.apache.camel.karaf/apache-camel/2.8.2/xml/features
-features:install camel-blueprint camel-stream
+karaf@root()> feature:repo-add camel 2.15.5
+...OR...
+karaf@root()> feature:repo-add mvn:org.apache.camel.karaf/apache-camel/2.15.5/xml/features
 
-Copy the file simplecamel.xml into the deploy folder of karaf
+karaf@root()> feature:install camel-blueprint camel-stream
 
-> list
+Check if feature was installed
+karaf@root()> feature:list | grep camel-blueprint
+
+
+Copy the file simple-camel-blueprint.xml into the deploy folder of karaf
+
+karaf@root()> list | grep simple-camel
 
 Should show something like that:
 [ 168] [Active     ] [Created     ] [       ] [   60] simplecamel.xml (0.0.0)
+...OR...
+78 | Active |  80 | 0.0.0   | simple-camel-blueprint.xml
+
+
+karaf@root()> la | grep simple-camel-blueprint
 
 You will see "Hello World" printed to the karaf console every 5 seconds.
 
@@ -22,7 +34,7 @@ Test
 ----
 
 As karaf listens to changes to the files in the deploy folder you can change the file and save to update it in karaf.
-Open the file simplecamel.xml in the deploy folder using a text editor.
+Open the file simple-camel-blueprint.xml in the deploy folder using a text editor.
 
 Change "stream:out" to "log:simplecamel" and save the file.
 
