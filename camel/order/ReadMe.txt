@@ -9,11 +9,10 @@ The business case in this example is a shop that partly works with external vend
 
 We receive an order as an xml file (See: src/test/resources/order1.xml).
 
-The order contains a customer element and several item elements. 
+The order contains a customer element and several item elements.
 Each item specifies the vendor. This can be either "direct" or a vendor name.
 If the item vendor is direct then the item should be exported to a file in a directory with the customer name.
-All other items are sent out by mail. The mail content should be customizeable. The mail address has to be fetched 
-from a service that maps vendor name to mail address.       
+All other items are sent out by mail. The mail content should be customizeable. The mail address has to be fetched from a service that maps vendor name to mail address.
 
 How is it implemented
 ---------------------
@@ -38,8 +37,12 @@ To run the route using maven from the command line:
 
 > mvn exec:java
 
-To deploy in Karaf
+To deploy in Apache Karaf
 
-features:addurl mvn:org.apache.camel.karaf/apache-camel/2.9.0/xml/features
-features:install camel-blueprint camel-mail camel-velocity camel-stream
-install -s mvn:net.lr.tutorial.karaf.camel/example-order/1.0-SNAPSHOT
+karaf@root()> feature:repo-add camel 2.15.5
+...OR...
+karaf@root()> feature:addurl mvn:org.apache.camel.karaf/apache-camel/2.9.0/xml/features
+
+karaf@root()> feature:install camel-blueprint camel-mail camel-velocity camel-stream
+
+karaf@root()> install -s mvn:net.lr.tutorial.karaf.camel/example-order/1.0-SNAPSHOT
