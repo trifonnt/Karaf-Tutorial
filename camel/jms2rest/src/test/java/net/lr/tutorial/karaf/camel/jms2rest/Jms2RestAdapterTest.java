@@ -32,7 +32,7 @@ import org.apache.camel.component.properties.PropertiesComponent;
 import org.apache.camel.test.junit4.CamelTestSupport;
 import org.junit.Assert;
 import org.junit.Ignore;
-import org.junit.Test;
+
 
 public class Jms2RestAdapterTest extends CamelTestSupport {
     @EndpointInject(uri="mock:received")
