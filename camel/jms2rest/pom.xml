@@ -27,7 +27,7 @@
     <packaging>bundle</packaging>
 
     <properties>
-    	<camel.version>2.12.0</camel.version>
+    	<camel.version>2.15.5</camel.version>
     	<cxf.version>2.7.6</cxf.version>
         <log4j-version>1.2.16</log4j-version>
         <slf4j-version>1.6.1</slf4j-version>
@@ -49,7 +49,6 @@
     </repositories>
 
     <dependencies>
-
         <dependency>
             <groupId>org.apache.camel</groupId>
             <artifactId>camel-core</artifactId>
@@ -110,8 +109,8 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>2.3.2</version>
                 <configuration>
-                    <source>1.6</source>
-                    <target>1.6</target>
+                    <source>1.8</source>
+                    <target>1.8</target>
                 </configuration>
             </plugin>
             <plugin>
@@ -128,4 +127,3 @@
         </plugins>
     </build>
 </project>
-

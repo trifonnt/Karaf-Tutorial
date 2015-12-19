@@ -41,7 +41,7 @@ To deploy in Apache Karaf
 
 karaf@root()> feature:repo-add camel 2.15.5
 ...OR...
-karaf@root()> feature:addurl mvn:org.apache.camel.karaf/apache-camel/2.9.0/xml/features
+karaf@root()> feature:addurl mvn:org.apache.camel.karaf/apache-camel/2.15.5/xml/features
 
 karaf@root()> feature:install camel-blueprint camel-mail camel-velocity camel-stream
 
